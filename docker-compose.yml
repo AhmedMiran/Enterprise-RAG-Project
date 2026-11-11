@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # The Redis broker service
+  redis:
+    image: redis:alpine
+    container_name: celery_redis_broker
+    ports:
+      - "6379:6379"
+
+  # Your application code running the Celery worker
+  celery_worker:
+    build: .
+    command: celery -A app.worker.celery_app:celery_app worker --pool=solo --loglevel=info
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis

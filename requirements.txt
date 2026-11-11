@@ -1,0 +1,12 @@
+celery[redis]
+alembic
+fastapi
+google-generativeai
+langchain-text-splitters
+pgvector
+psycopg[binary]
+pydantic-settings
+PyMuPDF==1.28.2
+python-multipart
+sqlalchemy
+uvicorn[standard]

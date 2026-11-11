@@ -1,0 +1,10 @@
+.env
+.env.*
+.gitignore
+.git
+.venv
+venv
+__pycache__
+*.py[cod]
+uploaded_files
+error.txt
